@@ -2,3 +2,22 @@ WARNING: All log messages before absl::InitializeLog() is called are written to 
 I0000 00:00:1793257157.972960    8283 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
 I0000 00:00:1793257159.892283    8283 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+{'a0': 0.25, 'model': 'dense_wide', 'seed': 0, 'auc': 0.8470191481550171, 'recall': 0.18329466357308585, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 117.33333333333333, 'cost': 0}
+{'a0': 0.25, 'model': 'dense_wide', 'seed': 1, 'auc': 0.8095421381985122, 'recall': 0.1531322505800464, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 119.0, 'cost': 0}
+{'a0': 0.25, 'model': 'dense_narrow', 'seed': 0, 'auc': 0.856592788936479, 'recall': 0.2529002320185615, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 106.66666666666667, 'cost': 0}
+{'a0': 0.25, 'model': 'dense_narrow', 'seed': 1, 'auc': 0.8537578476224139, 'recall': 0.26218097447795824, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 105.66666666666667, 'cost': 0}
+{'a0': 0.25, 'model': 'lstm_dae', 'seed': 0, 'auc': 0.8340754297613227, 'recall': 0.14385150812064965, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 122.33333333333333, 'cost': 0}
+{'a0': 0.25, 'model': 'lstm_dae', 'seed': 1, 'auc': 0.8306826423388308, 'recall': 0.1925754060324826, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 116.0, 'cost': 0}
+{'a0': 0.5, 'model': 'dense_wide', 'seed': 0, 'auc': 0.9231389383280164, 'recall': 0.27842227378190254, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 103.33333333333333, 'cost': 0}
+{'a0': 0.5, 'model': 'dense_wide', 'seed': 1, 'auc': 0.9292135214210284, 'recall': 0.2296983758700696, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 110.0, 'cost': 0}
+{'a0': 0.5, 'model': 'dense_narrow', 'seed': 0, 'auc': 0.9484461103481326, 'recall': 0.3062645011600928, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 99.0, 'cost': 0}
+{'a0': 0.5, 'model': 'dense_narrow', 'seed': 1, 'auc': 0.9479266962262991, 'recall': 0.27842227378190254, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 103.33333333333333, 'cost': 0}
+{'a0': 0.5, 'model': 'lstm_dae', 'seed': 0, 'auc': 0.9333283643492083, 'recall': 0.2273781902552204, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 110.33333333333333, 'cost': 0}
+{'a0': 0.5, 'model': 'lstm_dae', 'seed': 1, 'auc': 0.9279467216205255, 'recall': 0.2552204176334107, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 107.0, 'cost': 0}
+{'a0': 1.0, 'model': 'dense_wide', 'seed': 0, 'auc': 0.9907646771611223, 'recall': 0.34106728538283065, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 94.0, 'cost': 0}
+{'a0': 1.0, 'model': 'dense_wide', 'seed': 1, 'auc': 0.988963614516693, 'recall': 0.2273781902552204, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 76.5, 'cost': 400000}
+{'a0': 1.0, 'model': 'dense_narrow', 'seed': 0, 'auc': 0.9917860363199742, 'recall': 0.3248259860788863, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 96.66666666666667, 'cost': 0}
+{'a0': 1.0, 'model': 'dense_narrow', 'seed': 1, 'auc': 0.9921400764388921, 'recall': 0.3109048723897912, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 98.33333333333333, 'cost': 0}
+{'a0': 1.0, 'model': 'lstm_dae', 'seed': 0, 'auc': 0.9906211395142256, 'recall': 0.31786542923433875, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 97.33333333333333, 'cost': 0}
+{'a0': 1.0, 'model': 'lstm_dae', 'seed': 1, 'auc': 0.9893715176471238, 'recall': 0.2853828306264501, 'fa_per_day': 0.0, 'in_time': '0/3', 'mean_delay': 102.33333333333333, 'cost': 0}
+wrote sensitivity
