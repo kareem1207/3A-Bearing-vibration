@@ -28,3 +28,26 @@ bottleneck
 11          0.8247       0.0004     4.1590  9607.3188      0.0002    0.0005
 16          0.8219       0.0005     2.1047  4269.1894      0.0003    0.0005
 32          0.8299       0.0006     4.2420  8298.6432      0.0005    0.0007
+      auc    m  ...  cost_pt_mean_delay  cost_pt_cost
+T               ...                                  
+1   0.853  1.0  ...             122.889           0.0
+3   0.865  1.0  ...             121.000           0.0
+6   0.831  1.0  ...             119.556           0.0
+12  0.829  1.0  ...             121.889           0.0
+
+[4 rows x 10 columns]
+                                            0                          1
+operating point          Best F1 (validation)  Minimum cost (validation)
+threshold                             0.04603                   7.290115
+alarm rule (m)                              1                          1
+recall                                0.63109                   0.197216
+precision                            0.816817                        1.0
+F1                                   0.712042                   0.329457
+false alarms/day                     1.011921                        0.0
+faults detected in time                   0/3                        0/3
+missed faults                               0                          0
+false alarm episodes                       56                          0
+downtime cost Rs                            0                          0
+inspection cost Rs                     112000                          0
+total cost Rs                          112000                          0
+wrote results

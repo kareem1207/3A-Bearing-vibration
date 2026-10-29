@@ -1,0 +1,45 @@
+{
+  "data": "SIMULATED",
+  "main_model": "dense_dae_sparse",
+  "features": 11,
+  "series": {
+    "train": 12,
+    "val": 8,
+    "test": 12
+  },
+  "targets": {
+    "recall": 0.85,
+    "fa_per_day": 2.0,
+    "delay_readings": 3
+  },
+  "operating_m": 1,
+  "auc": 0.8600874793537252,
+  "best_f1_point": {
+    "thr": 0.046030375312757166,
+    "m": 1,
+    "recall": 0.6310904872389791,
+    "precision": 0.8168168168168168,
+    "f1": 0.7120418848167539,
+    "fa": 56,
+    "fa_per_day": 1.0119211946291882,
+    "events": 3,
+    "detected": 0,
+    "missed": 0,
+    "mean_delay": 46.0,
+    "cost": 112000
+  },
+  "min_cost_point": {
+    "thr": 7.290114939303719,
+    "m": 1,
+    "recall": 0.19721577726218098,
+    "precision": 1.0,
+    "f1": 0.3294573643410853,
+    "fa": 0,
+    "fa_per_day": 0.0,
+    "events": 3,
+    "detected": 0,
+    "missed": 0,
+    "mean_delay": 115.33333333333333,
+    "cost": 0
+  }
+}
