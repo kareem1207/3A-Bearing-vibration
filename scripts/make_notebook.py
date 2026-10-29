@@ -14,6 +14,8 @@ Team 3, variant 3A. Task 3 of the CM701PC / CM751PC Complex Engineering Problem.
 md("## 0. Setup"),
 code("""import os, sys, subprocess
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
+if os.path.exists("../src/imsae"):             # started from notebooks/
+    os.chdir("..")
 if not os.path.exists("src/imsae"):            # running in Colab: fetch the repository first
     subprocess.run(["git", "clone", "https://github.com/kareem1207/3a-bearing-vibration.git"], check=True)
     os.chdir("3a-bearing-vibration")
