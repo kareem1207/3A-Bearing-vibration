@@ -1,0 +1,30 @@
+[SIMULATED] train/val/test series: {'train': 12, 'val': 8, 'test': 12} features: 11
+fit dense_wide 0
+fit dense_wide 1
+fit dense_wide 2
+fit dense_narrow 0
+fit dense_narrow 1
+fit dense_narrow 2
+fit dense_dae_sparse 0
+fit dense_dae_sparse 1
+fit dense_dae_sparse 2
+fit lstm_dae 0
+fit lstm_dae 1
+fit lstm_dae 2
+                    auc  cost_pt_recall  ...  cost_pt_cost  f1_pt_f1
+model                                    ...                        
+dense_dae_sparse  0.866           0.389  ...     1350000.0     0.743
+dense_narrow      0.853           0.224  ...     1200000.0     0.735
+dense_wide        0.825           0.321  ...     1370000.0     0.694
+lstm_dae          0.831           0.138  ...     1200000.0     0.688
+
+[4 rows x 5 columns]
+main model (lowest mean validation cost): dense_dae_sparse
+               auc  err_healthy  err_fault      ratio  train_loss  val_loss
+bottleneck                                                                 
+2           0.8509       0.1054    71.0214   673.5544      0.0963    0.1005
+4           0.8761       0.0515     5.8384   113.3815      0.0476    0.0486
+8           0.8532       0.0115     9.2584   809.6897      0.0098    0.0107
+11          0.8247       0.0004     4.1590  9607.3188      0.0002    0.0005
+16          0.8219       0.0005     2.1047  4269.1894      0.0003    0.0005
+32          0.8299       0.0006     4.2420  8298.6432      0.0005    0.0007
