@@ -22,7 +22,7 @@ sys.path.insert(0, "src")
 
 USE_REAL_IMS = False
 IMS_ROOT = "/content/IMS"      # folder that holds 1st_test, 2nd_test, 3rd_test
-QUICK = True                   # True: 3 epochs, one seed (smoke run). False: full run (about 10 minutes)"""),
+QUICK = False                  # True: 3 epochs, one seed (smoke run). False: full training (about 6 minutes)"""),
 md("## 1. Data and features\nEvery snapshot (1 s, 20480 samples per channel) becomes 11 features per bearing: log RMS, kurtosis, crest factor and 8 band powers. Each series is standardised with its **own first 40 percent** (assumed healthy); no fault labels are used for training."),
 code("""import numpy as np, matplotlib.pyplot as plt, pandas as pd
 from imsae import evaluate as ev

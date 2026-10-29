@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset=utf-8><title>Note for plant engineers</title><style>
+@page{size:A4;margin:1.5cm 1.6cm}
+body{font-family:'DejaVu Serif',Georgia,serif;font-size:12pt;line-height:1.15;color:#111}
+h1{font-size:15pt;margin:0 0 2pt}h2{font-size:12.5pt;margin:7pt 0 2pt;color:#1f3a68}p{margin:2pt 0 3pt;text-align:justify}
+table{border-collapse:collapse;font-size:9.5pt;margin:3pt 0;width:100%}td,th{border:1px solid #999;padding:1.5pt 3pt;text-align:center}th{background:#e6ecf5}
+.cap{font-size:9.5pt;color:#333;margin-bottom:3pt}.warn{border:1.5px solid #b00;padding:3pt 5pt;margin:4pt 0;background:#fff5f5}
+ul{margin:2pt 0 2pt 14pt;padding:0}li{margin:0}.two{display:flex;gap:6pt}.two>div{flex:1}
+</style></head><body>
+<h1>Note for plant engineers: the bearing early warning system</h1>
+<p><b>Status: tested on simulated data only.</b> The numbers below show how the method behaves on a computer-made test, not on your machines. It must be re-checked on real recordings before anyone relies on it.</p>
+<h2>What it does</h2>
+<p>Every ten minutes the system listens to one second of vibration from each bearing and compares it with what that bearing sounds like when healthy. A healthy bearing is "learned" from its first days of running; no failed bearings are needed. If the vibration drifts away from the learned pattern, the system raises an alarm.</p>
+<h2>What we found</h2>
+<ul>
+<li>A failing bearing was always caught eventually, but <b>not early</b>. At the setting we recommend, the alarm came on average about <b>7 hours</b> after the fault began (the early signs are smaller than normal noise).</li>
+<li>At the recommended setting there is about <b>one false alarm a day</b>. A false alarm means an unnecessary inspection (about Rs 2,000).</li>
+<li>Only about <b>6 in 10</b> of the abnormal readings were flagged at that setting. We could not reach our goal of 85 in 10 without raising roughly <b>33 false alarms a day</b>, which is far too many; you would switch it off.</li>
+<li>A very quiet setting (no false alarms at all) still caught every fault in the end, but only about <b>18 hours</b> after it began, when it was already well advanced.</li>
+</ul>
+<h2>What we recommend</h2>
+<p>Use the middle setting: about one false alarm per day, warning several hours before a fault becomes severe. Treat an alarm as "go and look at this bearing today", not as "the bearing is about to fail". A missed breakdown costs about Rs 4 lakh, a needless inspection Rs 2,000, so inspecting even a hundred alarms is cheaper than one breakdown; but too many false alarms make people ignore the system, which is why the limit of two a day matters.</p>
+<h2>What we are not sure about</h2>
+<ul><li>Real machines have load changes, sensor ageing and dirt that our test data does not copy. The false alarm rate could be higher.</li>
+<li>The test had only three failures, so the figures are rough.</li>
+<li>Nobody has labelled the exact moment the real bearings started to fail; the timing figures depend on that.</li></ul>
+<h2>What we need from you</h2>
+<p>Recordings from one healthy week of each machine, and the maintenance log of past failures with dates, so we can check the system against real events.</p>
+</body></html>
