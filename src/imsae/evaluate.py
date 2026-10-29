@@ -1,5 +1,11 @@
 """Alarm rule, targets and cost model.
 
+Cost model: a fault is MISSED (Rs 4 lakh) only if no alarm is raised at any
+reading from its onset to the end of the run; a late alarm still prevents the
+breakdown. Timeliness is a separate target: 'detected' counts faults alarmed
+within DELAY_BUDGET readings. (A first version charged late alarms as misses,
+which made 'never alarm' the cheapest policy; see report section 4.)
+
 Sampling is one snapshot per 10 minutes, so the 5 minute delay target becomes
 'within 3 readings' (the rule the task gives for data sampled less than once a
 minute) and 24 hours = 144 readings.
@@ -27,7 +33,7 @@ def count_episodes(flags):
 
 def evaluate(series, thr, m=1):
     """series: list of (scores, onset or None). Pooled metrics at one operating point."""
-    fa = fp = normal_len = tp = fault_len = events = detected = 0
+    fa = fp = normal_len = tp = fault_len = events = detected = alarmed = 0
     delays = []
     for scores, onset in series:
         f = alarm_flags(scores, thr, m)
@@ -41,6 +47,7 @@ def evaluate(series, thr, m=1):
             tp += int(f[on:].sum())
             hit = np.flatnonzero(f[on:])
             if len(hit):
+                alarmed += 1
                 delays.append(int(hit[0]))
                 detected += hit[0] <= DELAY_BUDGET
     recall = tp / fault_len if fault_len else float("nan")
@@ -49,9 +56,9 @@ def evaluate(series, thr, m=1):
     return dict(
         thr=float(thr), m=m, recall=recall, precision=precision, f1=f1,
         fa=fa, fa_per_day=fa / (normal_len / READINGS_PER_DAY),
-        events=events, detected=int(detected), missed=events - int(detected),
+        events=events, detected=int(detected), missed=events - alarmed,
         mean_delay=float(np.mean(delays)) if delays else float("nan"),
-        cost=COST_MISS * (events - int(detected)) + COST_FALSE_ALARM * fa,
+        cost=COST_MISS * (events - alarmed) + COST_FALSE_ALARM * fa,
     )
 
 

@@ -21,7 +21,9 @@ def test_evaluate_counts_and_cost():
     assert r["cost"] == ev.COST_FALSE_ALARM
     assert np.isclose(r["recall"], 3 / 5)
     late = ev.evaluate([(np.r_[np.zeros(10), np.zeros(6), 9, 9.0], 10)], 1.0, 1)  # first alarm 6 readings late
-    assert late["missed"] == 1 and late["cost"] == ev.COST_MISS
+    assert late["detected"] == 0 and late["missed"] == 0 and late["cost"] == 0   # late, but not a breakdown
+    never = ev.evaluate([(np.zeros(16), 10)], 1.0, 1)
+    assert never["missed"] == 1 and never["cost"] == ev.COST_MISS
 
 
 def test_healthy_series_has_no_fault_labels():
